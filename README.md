@@ -16,10 +16,12 @@ Some goals we have for the project are a simple interface with not much code, in
 
 ## System Overview
 Major techincal checkpoints will include:
-1) Developing a front end of some sort using html and c# styling
-2) Developing a map reduce algorithm using rust to process data in a time efficient manner
-3) Testing our algorithm using online datasets and publishing results
-4) Develping additional data analysis tools to accompany our MapReduce
+1) Choosing a web framework for our Rust backend
+2) Developing a front end of some sort using html and css styling
+3) Developing a map reduce algorithm using rust to process data in a time efficient manner
+4) Testing our algorithm using online datasets and publishing results
+5) Determing what other algorithms we could implement
+6) Hook up the algorithms to the web backend. In doing so, find ways for the user to upload data for the algorithms to run, whether that be through images or even video processing.
 
 ## Possible Challenges
 
