@@ -15,7 +15,7 @@ The Project focuses on creating a web application that runs a Map Reduce on any 
 Some goals we have for the project are a simple interface with not much code, interesting data analysis features, and benchmarking for our concurrent algorithms. We believe that most of the work in the project should be spent on implementing the parallel algorithms, so the user interface will be rather simple to make up for that. Our data analysis features could involve graph or tree algorithms, image processing, or other data visualization.
 
 ## System Overview
-Major techincal checkpoints will include:
+Major technical checkpoints will include:
 1) Choosing a web framework for our Rust backend
 2) Developing a front end of some sort using html and css styling
 3) Developing a map reduce algorithm using rust to process data in a time efficient manner
