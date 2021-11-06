@@ -10,7 +10,9 @@ Project for CS128 Honors
 | Jonathan | jsneh2 |
 
 ## Project Introduction
-The Project focuses on creating a web application that runs a Map Reduce on any uploaded dataset along with other dataset analysis tools (To be decided) using a rust backend. The application will be tested using pre-existing datasets found from online (Will be sourced as we use them).
+The Project focuses on creating a web application that runs a Map Reduce on any uploaded dataset along with other dataset analysis tools (To be decided) using a rust backend. The application will be tested using pre-existing datasets found from online (Will be sourced as we use them). We chose to work on this project because we all enjoyed the last MP, and we think that working more on running parallel data analysis algorithms will improve our understanding of Rust and concurrency.
+
+Some goals we have for the project are a simple interface with not much code, interesting data analysis features, and benchmarking for our concurrent algorithms. We believe that most of the work in the project should be spent on implementing the parallel algorithms, so the user interface will be rather simple to make up for that. Our data analysis features could involve graph or tree algorithms, image processing, or other data visualization.
 
 ## System Overview
 Major techincal checkpoints will include:
