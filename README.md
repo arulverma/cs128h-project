@@ -21,4 +21,4 @@ Major techincal checkpoints will include:
 
 ## Possible Challenges
 
-Some possible challenges will be ...
+One possible challenge will be identifying a good backend library to use with Rust and hooking our data analysis code into it. There are many of them out there, so we will need to make a careful decision at the start so that we are headed in the right direction. Another challenge will be designing the process for the user to upload datasets to our backend for use by the MapReduce and/or other parallel data processing algorithms. If a data set is truly large, it might not be possible to upload it directly and we would have to resort to some form of data streaming.
