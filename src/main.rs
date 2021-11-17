@@ -2,7 +2,7 @@
 
 mod algorithms;
 
-use algorithms::map_reduce::map_reduce;
+use algorithms::map_reduce::run;
 
 #[get("/")]
 fn index() -> &'static str {
@@ -10,12 +10,13 @@ fn index() -> &'static str {
 }
 
 #[get("/mapreduce")]
-fn mapreduce() -> String {
-    let to_reduce = vec![String::from("REDUCE ME")];
+fn mapreduce() -> &'static str {
+    let to_reduce = String::from("HI");
+    let results = run(to_reduce);
 
-    let reduced = map_reduce(to_reduce).into_iter().reduce(|a, b| a + &b).unwrap_or(String::from("ERROR!"));
+    println!("{:#?}", results);
 
-    "Please upload your dataset here in one of the following accepted formats (.csv, .json): ".to_owned() + &reduced
+    "Please upload your dataset here in one of the following accepted formats (.csv, .json): "
 }
 
 #[launch]
