@@ -2,17 +2,21 @@
 
 mod algorithms;
 
-use algorithms::map_reduce::run;
+use std::path::Path; 
+use rocket::fs::NamedFile;
+use algorithms::map_reduce::{map_reduce, get_graph_points};
 
 #[get("/")]
-fn index() -> &'static str {
-    "Hello, world!"
+async fn index() -> Option<NamedFile> {
+    let page_directory_path = 
+        format!("{}/../client", env!("CARGO_MANIFEST_DIR"));
+    NamedFile::open(Path::new(&page_directory_path).join("index.html")).await.ok()
 }
 
 #[get("/mapreduce")]
 fn mapreduce() -> &'static str {
     let to_reduce = String::from("HI");
-    let results = run(to_reduce);
+    let results = get_graph_points(map_reduce(to_reduce));
 
     println!("{:#?}", results);
 
