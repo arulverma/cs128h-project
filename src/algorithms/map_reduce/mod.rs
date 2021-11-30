@@ -10,9 +10,9 @@ use mappers::word_length_mapper;
 use map::multi_threaded_mapper_generic;
 use reduce::thread_reducer;
 
-pub fn map_reduce(text: String) -> HashMap<usize, usize> {
+pub fn map_reduce(text: &str) -> HashMap<usize, usize> {
     let start: Instant = Instant::now();
-    let cleaned_contents: String = text;
+    let cleaned_contents: &str = text;
 
     let words: Vec<String> = cleaned_contents.split(" ")
         .into_iter()
