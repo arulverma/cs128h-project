@@ -6,7 +6,8 @@ pub fn splice_form_boundary<'a>(string: &'a mut String) -> &'a str {
     }
 
     string.drain(..first_boundary.unwrap());
-    let string = string.strip_suffix(|c| c != '\n').unwrap();
-    let string = string.strip_prefix(|c| c != '\n').unwrap();
+    let string = string.trim_end_matches('\n');
+    let string = string.trim_end_matches(|c| c != '\n');
+    let string = string.trim_start_matches(|c| c != '\n');
     string
 }

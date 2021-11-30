@@ -23,8 +23,6 @@ async fn mapreduce(data: Data<'_>) -> Result<&'static str, Debug<std::io::Error>
     let mut to_reduce = to_reduce.value;
     let to_reduce = splice_form_boundary(&mut to_reduce);
 
-    println!("Reducing {}", to_reduce);
-
     let results = get_graph_points(map_reduce(to_reduce));
 
     println!("{:#?}", results);
