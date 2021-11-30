@@ -2,8 +2,104 @@
 <html>
 <head>
     <title>Data Visualizations</title>
+    <style>
+        *, ::before, ::after {
+            box-sizing: border-box;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --blue: #56A3A6;
+            --green: #CAD49D;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0px;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100vw;
+            height: 65px;
+            background-color: var(--blue);
+            transition: background-color 200ms ease;
+        }
+
+        header.scrolling {
+            background-color: white;
+            box-shadow: 0px 0px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        section.headline {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            background-color: var(--blue);
+            width: 100vw;
+            height: 50vh;
+            font-size: 32px;
+            margin-top: 65px;
+        }
+
+        nav {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 5px 30px;
+        }
+
+        nav a {
+            color: white;
+            font-weight: bold;
+            transition: color 200ms ease;
+        }
+
+        header.scrolling nav a {
+            color: var(--blue);
+        }
+
+        a {
+            color: var(--green);
+            text-decoration: none;
+        }
+
+        main {
+            margin: 30px auto;
+            max-width: 150ch;
+            padding: 0px 50px;
+        }
+    </style>
 </head>
 <body>
-    <p>Test</p>
+    <header>
+        <nav>
+            <a href="#map-reduce">Map Reduce</a>
+        </nav>
+    </header>
+    <section class="headline">
+        <h1 style="text-align: center;">Data Visualizations in Rust</h1>
+    </section>
+    <main>
+        <section>
+            <h1 id="map-reduce">Map Reduce</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore mollitia molestiae qui repellendus adipisci maxime nisi optio dolorem reprehenderit doloremque reiciendis, ipsa, id et inventore labore libero ab sit omnis, nam temporibus ex nulla. Perferendis aspernatur omnis id, eligendi mollitia error debitis molestias quas provident quod est doloribus sunt vitae in necessitatibus neque odit iste delectus esse nam sed? Corrupti pariatur at molestiae in cupiditate laudantium. Odio veniam corporis dolorum magnam accusamus! Hic, laboriosam accusantium error sequi perferendis, sit architecto rerum tenetur dolorum aliquid corporis numquam! Blanditiis quis doloremque, minima laborum, quas possimus ipsum nulla repudiandae tempora ea esse deleniti dolores facere debitis eveniet quaerat quo id, odit obcaecati consectetur neque voluptates similique magni corrupti? Nemo doloribus dolore quidem laudantium assumenda optio repudiandae labore, explicabo vel distinctio nostrum a magni aperiam ducimus velit culpa itaque aut architecto pariatur in iste non! Esse beatae doloribus fugit, reprehenderit ipsa explicabo necessitatibus quasi magni quod quis veritatis illum natus quo, perspiciatis voluptate quas laborum earum? Recusandae pariatur deserunt vitae aut hic, ipsa mollitia tenetur optio quaerat nihil, odit consequuntur modi dolor repellat qui temporibus quam excepturi perspiciatis atque voluptatem! Alias assumenda, libero magnam distinctio illo nemo iure fugiat modi praesentium, saepe est? Sed, nihil tempora! Possimus fuga quia similique voluptatum? Autem minus consectetur similique saepe! Dolore provident molestias facere assumenda nesciunt eos voluptatem, nostrum nulla, quidem iure dolores? Fuga animi corrupti quisquam praesentium, assumenda consectetur suscipit obcaecati. Sed id cum similique omnis quas natus at nisi vero molestiae deserunt voluptatum et reprehenderit dolorem possimus voluptates atque fuga unde, necessitatibus aliquid animi molestias, a dolor provident? Deleniti cumque libero molestias quod! Inventore in obcaecati sequi odit consequatur? Numquam optio itaque provident, nam porro consequuntur veniam voluptates debitis sapiente atque! Facilis blanditiis obcaecati id nam ullam sit itaque rem necessitatibus beatae? Eaque necessitatibus delectus minus.</p>
+            <form action="/mapreduce" method="post">
+                <input type="file" value="Upload your dataset">
+            </form>
+        </section>
+    </main>
 </body>
+<script>
+const header = document.getElementsByTagName('header')[0];
+window.addEventListener('scroll', () => {
+    if (window.scrollY) {
+        header.classList.add('scrolling');
+    } else {
+        header.classList.remove('scrolling');
+    }
+});
+</script>
 </html>

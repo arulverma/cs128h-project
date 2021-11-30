@@ -4,23 +4,26 @@ mod algorithms;
 
 use std::path::Path; 
 use rocket::fs::NamedFile;
+use rocket::data::{Data, ToByteUnit};
+use rocket::response::Debug;
 use algorithms::map_reduce::{map_reduce, get_graph_points};
 
 #[get("/")]
 async fn index() -> Option<NamedFile> {
     let page_directory_path = 
-        format!("{}/../client", env!("CARGO_MANIFEST_DIR"));
+        format!("{}/client", env!("CARGO_MANIFEST_DIR"));
     NamedFile::open(Path::new(&page_directory_path).join("index.html")).await.ok()
 }
 
-#[get("/mapreduce")]
-fn mapreduce() -> &'static str {
-    let to_reduce = String::from("HI");
-    let results = get_graph_points(map_reduce(to_reduce));
+#[post("/mapreduce", data = "<data>")]
+async fn mapreduce(data: Data<'_>) -> Result<&'static str, Debug<std::io::Error>> {
+    let to_reduce = data.open((1 as i64).mebibytes()).into_string().await?;
+
+    let results = get_graph_points(map_reduce(to_reduce.value));
 
     println!("{:#?}", results);
 
-    "Please upload your dataset here in one of the following accepted formats (.csv, .json): "
+    Ok("Data set successfully uploaded")
 }
 
 #[launch]
